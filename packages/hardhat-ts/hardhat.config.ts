@@ -36,7 +36,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = 'localhost';
+const defaultNetwork = 'rinkeby';
 
 const getMnemonic = () => {
   try {
@@ -395,7 +395,7 @@ task('send', 'Send ETH')
       nonce: await fromSigner.getTransactionCount(),
       gasPrice: parseUnits(taskArgs.gasPrice ? taskArgs.gasPrice : '1.001', 'gwei').toHexString(),
       gasLimit: taskArgs.gasLimit ? taskArgs.gasLimit : 24000,
-      chainId: network.config.chainId,
+      chainId: 1337,
     };
 
     if (taskArgs.data !== undefined) {
